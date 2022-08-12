@@ -24,7 +24,7 @@ import Servicio.CuentaService;
     Cuenta cuenta = cuen.crearCuenta();
     cuenta.ingresar(450.25);
     cuenta.consultarSaldo();
-    cuenta.retirar(15);
+    cuenta.retirar(600);
     cuenta.consultarSaldo();
     cuenta.extraccionRapida();
     cuenta.consultarDatos();
