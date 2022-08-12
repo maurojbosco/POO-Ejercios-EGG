@@ -1,7 +1,5 @@
 package Entidad;
 
-import java.util.Scanner;
-
 public class Operacion {
     // Atributos
     private int numero1;
@@ -32,19 +30,6 @@ public class Operacion {
 
     public void setNumero2(int numero2) {
         this.numero2 = numero2;
-    }
-
-    // Método que le pide al usuario los dos números y los guarda en los atributos
-    // del objeto.
-    public Operacion crearOperacion() {
-        System.out.println("Ingrese el valor del numero 1");
-        Scanner sn = new Scanner(System.in);
-        int num1 = sn.nextInt();
-        System.out.println("Ingrese el valor del numero 2");
-        int num2 = sn.nextInt();
-        sn.close();
-        Operacion oper = new Operacion(num1, num2);
-        return oper;
     }
 
     // Método que calcula la suma de los números y devuelve el resultado al main.

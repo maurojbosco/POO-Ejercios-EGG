@@ -15,6 +15,7 @@ una división por cero, el método devuelve 0 y se le informa al usuario el erro
 informa al usuario. Si no, se hace la división y se devuelve el resultado al main.
  */
 import Entidad.Operacion;
+import Servicio.OperacionService;
 
 public class App {
     /**
@@ -22,8 +23,8 @@ public class App {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-        Operacion ope = new Operacion();
-        ope = ope.crearOperacion();
+        OperacionService opeSer = new OperacionService();
+        Operacion ope = opeSer.crearOperacion();
         System.out.println("La suma de ambos números es "+ope.sumar());
         System.out.println("El primer número menos el segundo da como resultado "+ope.restar());
         System.out.println("La multiplicacion de ambos números es "+ope.multiplicar());
