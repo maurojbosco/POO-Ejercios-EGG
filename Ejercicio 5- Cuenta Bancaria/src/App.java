@@ -19,6 +19,10 @@ import Entidad.Cuenta;
 import Servicio.CuentaService;
 
  public class App {
+    /**
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
     CuentaService cuen = new CuentaService();
     Cuenta cuenta = cuen.crearCuenta();
