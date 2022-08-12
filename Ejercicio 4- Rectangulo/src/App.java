@@ -10,6 +10,7 @@ correspondientes.
 Superficie = base * altura / Perímetro = (base + altura) * 2 
 */
 import Entidad.Rectangulo;
+import Servicio.RectanguloService;
 
 public class App {
     /**
@@ -17,8 +18,8 @@ public class App {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-        Rectangulo rect = new Rectangulo();
-        rect.crearRectangulo();
+        RectanguloService rectServ = new RectanguloService();
+        Rectangulo rect = rectServ.crearRectangulo();
         System.out.println("La superficie es de: " + rect.calcularSuperficie());
         System.out.println("El perímetro es de: " + rect.calcularPerimetro());
         rect.dibujarRectangulo();

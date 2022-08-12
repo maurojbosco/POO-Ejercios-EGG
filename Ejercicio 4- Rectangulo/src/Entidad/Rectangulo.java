@@ -1,7 +1,5 @@
 package Entidad;
 
-import java.util.Scanner;
-
 public class Rectangulo {
     // Atributos
     private int base;
@@ -32,17 +30,6 @@ public class Rectangulo {
 
     public void setAltura(int altura) {
         this.altura = altura;
-    }
-
-    // método para crear el rectángulo con los datos del Rectángulo dados por el
-    // usuario
-    public void crearRectangulo() {
-        Scanner sn = new Scanner(System.in);
-        System.out.println("Ingrese la base del Rectángulo");
-        this.base = sn.nextInt();
-        System.out.println("Ingrese la altura del Rectángulo");
-        this.altura = sn.nextInt();
-        sn.close();
     }
 
     // método para calcular la superficie del rectángulo
