@@ -1,3 +1,4 @@
+
 /*Realizar una clase llamada Matemática que tenga como atributos dos números reales con 
 los cuales se realizarán diferentes operaciones matemáticas. La clase deber tener un 
 constructor vacío, parametrizado y get y set. En el main se creará el objeto y se usará el 
@@ -9,11 +10,22 @@ al menor número. Previamente se deben redondear ambos valores.
 c) Método calculaRaiz(), para calcular la raíz cuadrada del menor de los dos valores. 
 Antes de calcular la raíz cuadrada se debe obtener el valor absoluto del número.
  */
+import Entidad.Matematica;
+
 public class App {
     /**
      * @param args
      */
     public static void main(String[] args) {
-
+        // Se instancia el objeto
+        Matematica nums = new Matematica();
+        nums.setReal1(Math.random());
+        nums.setReal2(Math.random());
+        // Se llama al método que indica cual atributo es mayor
+        nums.devolverMayor();
+        // Se llama al método que calcula la potencia del mayor número elevado al menor
+        nums.calcularPotencia();
+        // Se llama al método que calcula la raiz cuadrada del menor de los 2 atributos
+        nums.calcularRaiz();
     }
 }
