@@ -1,3 +1,4 @@
+
 /*Programa Nespresso. Desarrolle una clase Cafetera con los atributos capacidadMaxima
 (la cantidad máxima de café que puede contener la cafetera) y cantidadActual (la cantidad 
 actual de café que hay en la cafetera). Implemente, al menos, los siguientes métodos: 
@@ -13,12 +14,24 @@ cuanto quedó la taza.
 • Método vaciarCafetera(): pone la cantidad de café actual en cero. 
 • Método agregarCafe(int): se le pide al usuario una cantidad de café, el método lo 
 recibe y se añade a la cafetera la cantidad de café indicada*/
+import Entidad.Cafetera;
+
 public class App {
     /**
      * @param args
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        // Instancio una cafetera
+        Cafetera cafetera = new Cafetera(1000, 0);
+        // lleno la cafetera
+        cafetera.llenarCafetera();
+        // sirvo taza
+        cafetera.servirTaza(250);
+        // vacío la cafetera
+        cafetera.vaciarCafetera();
+        // agrego cafe en la cafetera
+        cafetera.agregarCafe(1200);
+
     }
 }
