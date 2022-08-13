@@ -77,10 +77,6 @@ public class Persona {
 
     // Método que indica si la persona es mayor de edad
     public boolean esMayorDeEdad() {
-        if (this.edad > 18) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.edad >= 18;
     }
 }
