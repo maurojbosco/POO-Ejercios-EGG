@@ -1,3 +1,4 @@
+
 /*Realizar una clase llamada Persona que tenga los siguientes atributos: nombre, edad, sexo 
 ('H' hombre, 'M' mujer, 'O' otro), peso y altura. Si el alumno desea añadir algún otro 
 atributo, puede hacerlo. Los métodos que se implementarán son:
@@ -27,12 +28,54 @@ distintas variables, para después en el main, calcular un porcentaje de esas 4 
 cuantas están por debajo de su peso, cuantas en su peso ideal y cuantos, por encima, y 
 también calcularemos un porcentaje de cuantos son mayores de edad y cuantos menores.
  */
+import Entidad.Persona;
+import Servicio.PersonaService;
+
 public class App {
- 
+
     /**
      * @param args
      */
     public static void main(String[] args) {
-        
+        // Instancio 4 personas en un vector de objetos
+        PersonaService perSer = new PersonaService();
+        Persona[] personas = new Persona[4];
+        for (int i = 0; i < personas.length; i++) {
+            personas[i] = perSer.crearPersona();
+        }
+        // Compruebo si las personas están en supeso ideal y si son mayores de edad,
+        // luego guardo los datos en vectores
+        int[] IMC = new int[4];
+        boolean[] may18 = new boolean[4];
+        for (int i = 0; i < personas.length; i++) {
+            IMC[i] = personas[i].calcularIMC();
+            may18[i] = personas[i].esMayorDeEdad();
+        }
+        // Cuento los resultados de los métodos anteriormente aplicados a los objetos
+        int countbajopeso = 0, countpesoideal = 0, countsobrepeso = 0, countmayor = 0, countmenor = 0;
+        for (int i = 0; i < personas.length; i++) {
+            switch (IMC[i]) {
+                case -1:
+                    countbajopeso++;
+                    break;
+                case 0:
+                    countpesoideal++;
+                    break;
+                case 1:
+                    countsobrepeso++;
+                    break;
+            }
+            if (may18[i]) {
+                countmayor++;
+            } else {
+                countmenor++;
+            }
+        }
+        // Imprimo por pantalla las estadísticas
+        System.out.println(countbajopeso + " personas estan debajo de su peso ideal, " + countpesoideal
+                + " personas estan en su peso ideal, " + countsobrepeso + " personas tienen sobrepeso. " + countmayor
+                + " personas son mayores de edad y " + countmenor + " personas son menores de edad");
+
     }
+
 }
