@@ -19,6 +19,7 @@ public class App {
     public static void main(String[] args) {
         // Se instancia el objeto
         Matematica nums = new Matematica();
+        //Se asignan valores aleatorios a sus atributos
         nums.setReal1(Math.random());
         nums.setReal2(Math.random());
         // Se llama al método que indica cual atributo es mayor
