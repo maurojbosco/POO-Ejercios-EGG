@@ -20,11 +20,15 @@ busque una letra que no esté, se le restará uno a sus oportunidades.
 • Método juego(): el método juego se encargará de llamar todos los métodos
 previamente mencionados e informará cuando el usuario descubra toda la palabra o
 se quede sin intentos. Este método se llamará en el main. */
+
+import Entidad.Ahorcado;
+
 public class App {
     /**
      * @param args
      */
     public static void main(String[] args) {
-        
+        Ahorcado ahorcado = new Ahorcado();
+        ahorcado.juego();
     }
 }
