@@ -69,9 +69,6 @@ public class Ahorcado {
                 flag = true;
             }
         }
-        if (!flag) {
-            this.jugadasMaximas--;
-        }
         System.out.println("Han sido encontradas " + this.cantLetEncontradas + " letras. Faltan por encontrar "
                 + (this.palabraABuscar.length - this.cantLetEncontradas) + " letras");
         return flag;
@@ -83,7 +80,8 @@ public class Ahorcado {
     }
 
     /*
-     * Método que se encarga de llamar todos los métodos previamente escritos e
+     * Método que se encarga de llamar todos los métodos previamente escritos y le
+     * resta 1 a jugadasMaximas si la función encontradas devolvió false. Luego
      * informa cuando el usuario descubra toda la palabra o se quede sin intentos.
      */
     public void juego() {
@@ -93,7 +91,9 @@ public class Ahorcado {
             System.out.println("Ingrese una letra a buscar");
             char letra = sn.next().charAt(0);
             buscar(letra);
-            encontradas(letra);
+            if (!encontradas(letra)) {
+                this.jugadasMaximas--;
+            }
             intentos();
         } while (this.jugadasMaximas > 0 && this.cantLetEncontradas != this.palabraABuscar.length);
         if (this.jugadasMaximas == 0) {
