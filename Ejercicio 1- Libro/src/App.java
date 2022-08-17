@@ -3,6 +3,7 @@ Número de páginas, y un constructor con todos los atributos pasados por parám
 constructor vacío. Crear un método para cargar un libro pidiendo los datos al usuario y 
 luego informar mediante otro método el número de ISBN, el título, el autor del libro y el 
 numero de páginas*/
+
 import Entidad.Libro;
 import Servicio.LibroService;
 
@@ -12,8 +13,10 @@ public class App {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
+        //Se instancia un objeto libro llamando al método en el servicio
         LibroService libroserv = new LibroService();
         Libro libro1 = libroserv.crearLibro();
+        //Se llama al método que muestra el objeto libro por pantalla
         libroserv.mostrarLibro(libro1);
         libro1 = null;
     }
